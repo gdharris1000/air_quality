@@ -2,6 +2,10 @@
 
 An app that displays the current air quality of a given location.
 
+## Status
+
+In progress
+
 ## Technology
 Built using Dart and Flutter.
 
