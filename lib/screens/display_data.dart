@@ -11,6 +11,7 @@ class DataView extends StatefulWidget {
 
 class _DataViewState extends State<DataView> {
   String aqi = "hi";
+  String station = "Finding nearest station...";
   LocationController locationController = LocationController();
 
   @override
@@ -30,14 +31,24 @@ class _DataViewState extends State<DataView> {
     Air air = await airController.getData(context);
     setState(() {
       aqi = air.aqi.toString();
+      station = air.station;
     });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Text(aqi),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          Center(
+            child: Text(aqi),
+          ),
+          Center(
+            child: Text(station),
+          ),
+        ],
       ),
     );
   }
