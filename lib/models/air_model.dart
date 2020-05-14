@@ -1,4 +1,4 @@
-class AirModel {
+class Air {
   int aqi;
 //  double no2;
 //  double o3;
@@ -11,9 +11,9 @@ class AirModel {
 //  AirModel(this.aqi, this.no2, this.o3, this.pm25, this.pm10, this.station,
 //      this.temp, this.humidity);
 
-  AirModel(this.aqi);
+  Air(this.aqi);
 
-  AirModel.fromJson(Map<String, dynamic> parsedJson) {
+  Air.fromJson(Map<String, dynamic> parsedJson) {
     //convert to int
     aqi = parsedJson['data']['aqi'];
     //convert to double
