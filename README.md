@@ -9,11 +9,28 @@ In progress
 ## Technology
 Built using Dart and Flutter.
 
+## Current Features
+
+* Gets the user's location
+* Displays the AQI value
+* Displays the AQI level
+* Displays the nearest monitoring station to the user
+
+## Future Features
+
+* A user can search for a location to get the air quality data
+* Display PM2.5 level
+* Display PM10 level
+* Display O3 level
+* Display NO2 level
+* Display temperature
+* Display humidity
+
 ## Data
 
 The data is taken from the API provided by the [World Air Quality Index project](https://aqicn.org/).
 
-## External Libraries used
+## External Libraries Used
 * [http](https://pub.dev/packages/http)
 * [geolocator](https://pub.dev/packages/geolocator)
 

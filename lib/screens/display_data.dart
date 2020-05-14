@@ -3,6 +3,7 @@ import 'package:airquality1/models/air_model.dart';
 import 'package:airquality1/controllers/location_controller.dart';
 import 'package:airquality1/controllers/air_controller.dart';
 import 'package:airquality1/models/location_model.dart';
+import 'package:airquality1/widgets/aqi_widget.dart';
 
 class DataView extends StatefulWidget {
   @override
@@ -10,7 +11,7 @@ class DataView extends StatefulWidget {
 }
 
 class _DataViewState extends State<DataView> {
-  String aqi = "hi";
+  int aqi = 0;
   String station = "Finding nearest station...";
   LocationController locationController = LocationController();
 
@@ -30,7 +31,7 @@ class _DataViewState extends State<DataView> {
     AirController airController = AirController(location);
     Air air = await airController.getData(context);
     setState(() {
-      aqi = air.aqi.toString();
+      aqi = air.aqi;
       station = air.station;
     });
   }
@@ -43,7 +44,7 @@ class _DataViewState extends State<DataView> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
-            child: Text(aqi),
+            child: AQI(aqi),
           ),
           Center(
             child: Text(station),
