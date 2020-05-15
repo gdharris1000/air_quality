@@ -6,7 +6,7 @@ import 'package:airquality1/models/location_model.dart';
 
 class AirController {
   Location location;
-  String url = "https://api.waqi.info/feed/";
+  final String url = "https://api.waqi.info/feed/";
 
   AirController(this.location);
 
