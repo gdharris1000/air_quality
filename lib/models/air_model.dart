@@ -14,12 +14,8 @@ class Air {
   Air(this.aqi, this.station);
 
   Air.fromJson(Map<String, dynamic> parsedJson) {
-    //convert to int
     aqi = parsedJson['data']['aqi'];
     station = parsedJson['data']['city']['name'];
-    //convert to double
     //no2 = parsedJson['iaqi']['no2']['v'];
-    //convert to double
-    //o3 = parsedJson['o3'];
   }
 }

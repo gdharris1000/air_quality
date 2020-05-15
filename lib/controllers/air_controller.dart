@@ -18,8 +18,6 @@ class AirController {
   }
 
   Future<Air> getDataFromApi(apiData) async {
-//    AirModel airModel;
-
     if (location.latitude != null && location.longitude != null) {
       final response = await get(
           '${url}geo:${location.latitude};${location.longitude}/?token=${apiData['apikey']}');

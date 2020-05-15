@@ -17,7 +17,6 @@ class _DataViewState extends State<DataView> {
 
   @override
   void initState() {
-    // TODO: implement initState
     getLocationData();
     super.initState();
   }
@@ -39,17 +38,26 @@ class _DataViewState extends State<DataView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: <Widget>[
-          Center(
-            child: AQI(aqi),
-          ),
-          Center(
-            child: Text(station),
-          ),
-        ],
+      body: SafeArea(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              child: Text(
+                'Air Quality Index Value',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Center(
+              child: AQI(aqi),
+            ),
+            Container(
+              padding: EdgeInsets.only(top: 10.0),
+              child: Text('Nearest station:\n $station'),
+            ),
+          ],
+        ),
       ),
     );
   }
