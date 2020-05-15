@@ -1,10 +1,11 @@
 # Air Quality
 
 An app that displays the current air quality of a given location.
+!["screenshots"](./readme_images/screenshots.jpg)
 
 ## Status
 
-In progress
+In progress.
 
 ## Technology
 Built using Dart and Flutter.
