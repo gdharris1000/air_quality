@@ -22,7 +22,7 @@ class _AQIState extends State<AQI> {
     } else if (widget.aqi >= 101 && widget.aqi <= 150) {
       level = "Unhealthy for Sensitive Groups";
       return Colors.orange;
-    } else if (widget.aqi >= 151 && widget.aqi <= 150) {
+    } else if (widget.aqi >= 151 && widget.aqi <= 200) {
       level = "Unhealthy";
       return Colors.red;
     } else if (widget.aqi >= 201 && widget.aqi <= 300) {
