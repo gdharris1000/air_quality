@@ -45,17 +45,11 @@ $ flutter pub get
 ### API Key
 You will need to provide your own api key, available for free here: [https://aqicn.org/data-platform/register/](https://aqicn.org/data-platform/register/)
 
-To include the API key in the app, create an api folder in the assets directory
-````bash
-$ cd assets
-$ cd mkdir api
-````
-Next, create an apikey.json file in that directory
-````bash
-$ cd assets/api
-$ touch apikey.json
-````
-Add the following to the apikey.json file...
+To include the API key in the app...
+* Create an 'assets' folder in the main directory
+* Create an 'api' folder in the 'assets' folder
+* Create an 'apikey.json' file in the 'api' folder
+* Add the following to the apikey.json file...
 ````json
 {
   "apikey": "YOUR_API_KEY_GOES_HERE"
