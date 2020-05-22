@@ -13,6 +13,7 @@ class DataView extends StatefulWidget {
 class _DataViewState extends State<DataView> {
   int aqi = 0;
   String station = "Finding nearest station...";
+  int pm25 = 0;
   LocationController locationController = LocationController();
 
   @override
@@ -32,6 +33,7 @@ class _DataViewState extends State<DataView> {
     setState(() {
       aqi = air.aqi;
       station = air.station;
+      pm25 = air.pm25;
     });
   }
 
@@ -50,6 +52,9 @@ class _DataViewState extends State<DataView> {
               padding: EdgeInsets.only(top: 10.0),
               child: Text('Nearest station:\n $station'),
             ),
+            Container(
+              child: Text('PM25: $pm25'),
+            )
           ],
         ),
       ),
