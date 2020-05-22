@@ -3,7 +3,7 @@ class Air {
   int pm25;
 //  double o3;
 //  double pm25;
-//  double pm10;
+  int pm10;
   String station;
 //  double temp;
 //  double humidity;
@@ -17,5 +17,6 @@ class Air {
     aqi = parsedJson['data']['aqi'];
     station = parsedJson['data']['city']['name'];
     pm25 = parsedJson['data']['iaqi']['pm25']['v'];
+    pm10 = parsedJson['data']['iaqi']['pm10']['v'];
   }
 }

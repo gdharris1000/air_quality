@@ -14,6 +14,7 @@ class _DataViewState extends State<DataView> {
   int aqi = 0;
   String station = "Finding nearest station...";
   int pm25 = 0;
+  int pm10 = 0;
   LocationController locationController = LocationController();
 
   @override
@@ -34,6 +35,7 @@ class _DataViewState extends State<DataView> {
       aqi = air.aqi;
       station = air.station;
       pm25 = air.pm25;
+      pm10 = air.pm10;
     });
   }
 
@@ -54,7 +56,10 @@ class _DataViewState extends State<DataView> {
             ),
             Container(
               child: Text('PM25: $pm25'),
-            )
+            ),
+            Container(
+              child: Text('PM10: $pm10'),
+            ),
           ],
         ),
       ),
