@@ -43,12 +43,6 @@ class _DataViewState extends State<DataView> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Container(
-              child: Text(
-                'Air Quality Index Value',
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-            ),
             Center(
               child: AQI(aqi),
             ),

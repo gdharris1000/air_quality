@@ -1,6 +1,6 @@
 class Air {
   int aqi;
-//  double no2;
+  double no2;
 //  double o3;
 //  double pm25;
 //  double pm10;
@@ -16,6 +16,6 @@ class Air {
   Air.fromJson(Map<String, dynamic> parsedJson) {
     aqi = parsedJson['data']['aqi'];
     station = parsedJson['data']['city']['name'];
-    //no2 = parsedJson['iaqi']['no2']['v'];
+    no2 = parsedJson['iaqi']['no2']['v'];
   }
 }

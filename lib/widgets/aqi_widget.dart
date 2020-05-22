@@ -36,23 +36,33 @@ class _AQIState extends State<AQI> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
-      color: checkLevel(),
-      child: Column(
-        children: <Widget>[
-          Container(
-            padding: EdgeInsets.only(bottom: 10.0),
-            child: Text(
-              widget.aqi.toString(),
-              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-            ),
+    return Column(
+      children: <Widget>[
+        Center(
+          child: Text("Air Quality Index Value"),
+        ),
+        SizedBox(
+          height: 10.0,
+        ),
+        Container(
+          padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
+          color: checkLevel(),
+          child: Column(
+            children: <Widget>[
+              Container(
+                padding: EdgeInsets.only(bottom: 10.0),
+                child: Text(
+                  widget.aqi.toString(),
+                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                ),
+              ),
+              Container(
+                child: Text(level),
+              )
+            ],
           ),
-          Container(
-            child: Text(level),
-          )
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
