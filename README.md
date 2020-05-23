@@ -16,6 +16,7 @@ Built using Dart and Flutter.
 * Displays the AQI value
 * Displays the AQI level
 * Displays the nearest monitoring station to the user
+* User can refresh to update the data
 
 ## Future Features
 
@@ -57,4 +58,4 @@ To include the API key in the app...
 ````
 
 ## Credits
-Background image photo by [Taylor Van Riper](https://unsplash.com/@taylorvanriper925).
+Background photo by [Taylor Van Riper](https://unsplash.com/@taylorvanriper925).

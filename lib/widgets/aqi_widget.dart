@@ -27,10 +27,10 @@ class _AQIState extends State<AQI> {
       return Colors.red;
     } else if (widget.aqi >= 201 && widget.aqi <= 300) {
       level = "Very Unhealthy";
-      return Colors.deepPurple;
+      return Color(0xff724deb);
     } else if (widget.aqi > 300) {
       level = "Hazardous";
-      return Color(0xff7e0023);
+      return Color(0xffb30231);
     }
   }
 

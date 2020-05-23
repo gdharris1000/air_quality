@@ -53,6 +53,7 @@ class _DataViewState extends State<DataView> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Container(
+                constraints: BoxConstraints(maxWidth: 300),
                 decoration: BoxDecoration(
                   color: Colors.white.withOpacity(0.5),
                   borderRadius: BorderRadius.circular(20.0),
