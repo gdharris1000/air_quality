@@ -57,4 +57,4 @@ To include the API key in the app...
 ````
 
 ## Credits
-Background image photo by [https://unsplash.com/@taylorvanriper925](Taylor Van Riper).
+Background image photo by [Taylor Van Riper](https://unsplash.com/@taylorvanriper925).

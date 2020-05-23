@@ -71,6 +71,16 @@ class _DataViewState extends State<DataView> {
                   child: AQI(aqi),
                 ),
               ),
+              RaisedButton(
+                color: Colors.blueAccent,
+                onPressed: () {
+                  getLocationData();
+                },
+                child: Text(
+                  "Refresh",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
 //              Container(
 //                padding: EdgeInsets.all(20.0),
 //                decoration: BoxDecoration(
