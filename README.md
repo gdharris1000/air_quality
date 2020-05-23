@@ -55,3 +55,6 @@ To include the API key in the app...
   "apikey": "YOUR_API_KEY_GOES_HERE"
 }
 ````
+
+## Credits
+Background image photo by [https://unsplash.com/@taylorvanriper925](Taylor Van Riper).

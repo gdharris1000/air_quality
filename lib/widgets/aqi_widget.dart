@@ -46,7 +46,10 @@ class _AQIState extends State<AQI> {
         ),
         Container(
           padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
-          color: checkLevel(),
+          decoration: BoxDecoration(color: checkLevel(), boxShadow: [
+            BoxShadow(
+                color: Colors.grey.withOpacity(0.5), offset: Offset(5.0, 5.0))
+          ]),
           child: Column(
             children: <Widget>[
               Container(
