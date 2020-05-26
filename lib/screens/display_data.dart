@@ -15,6 +15,7 @@ class _DataViewState extends State<DataView> {
   String station = "Finding nearest station...";
   int pm25 = 0;
   int pm10 = 0;
+  double o3 = 0;
   LocationController locationController = LocationController();
 
   @override
@@ -36,6 +37,7 @@ class _DataViewState extends State<DataView> {
       station = air.station;
       pm25 = air.pm25;
       pm10 = air.pm10;
+      o3 = air.o3;
     });
   }
 
@@ -74,6 +76,7 @@ class _DataViewState extends State<DataView> {
               ),
               Text("PM2.5: ${pm25 != null ? pm25 : 'no data available'}"),
               Text("PM10: ${pm10 != null ? pm10 : 'no data available'}"),
+              Text("O3: ${o3 != null ? o3 : 'no data available'}"),
               RaisedButton(
                 color: Colors.blueAccent,
                 onPressed: () {
