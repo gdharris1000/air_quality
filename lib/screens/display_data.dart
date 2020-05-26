@@ -72,6 +72,7 @@ class _DataViewState extends State<DataView> {
                   child: AQI(aqi),
                 ),
               ),
+              Text("PM2.5: ${pm25 != null ? pm25 : 'no data available'}"),
               RaisedButton(
                 color: Colors.blueAccent,
                 onPressed: () {
