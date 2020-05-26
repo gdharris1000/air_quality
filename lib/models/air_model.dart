@@ -19,6 +19,9 @@ class Air {
     parsedJson['data']['iaqi']['pm25']['v'] != null
         ? pm25 = parsedJson['data']['iaqi']['pm25']['v']
         : pm25 = null;
-//    pm10 = parsedJson['data']['iaqi']['pm10']['v'];
+
+    parsedJson['data']['iaqi']['pm10']['v'] != null
+        ? pm10 = parsedJson['data']['iaqi']['pm10']['v']
+        : pm10 = null;
   }
 }

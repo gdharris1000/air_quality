@@ -73,6 +73,7 @@ class _DataViewState extends State<DataView> {
                 ),
               ),
               Text("PM2.5: ${pm25 != null ? pm25 : 'no data available'}"),
+              Text("PM10: ${pm10 != null ? pm10 : 'no data available'}"),
               RaisedButton(
                 color: Colors.blueAccent,
                 onPressed: () {
