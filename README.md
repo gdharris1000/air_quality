@@ -3,9 +3,6 @@
 An app that displays the current air quality of a given location.
 !["screenshots"](./readme_images/screenshots.jpg)
 
-## Status
-
-In progress.
 
 ## Technology
 Built using Dart and Flutter.
@@ -27,6 +24,7 @@ Built using Dart and Flutter.
 * Display NO2 level
 * Display temperature
 * Display humidity
+* Improve the UI
 
 ## Data
 
