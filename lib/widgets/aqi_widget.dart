@@ -36,40 +36,45 @@ class _AQIState extends State<AQI> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Center(
-          child: Text("Air Quality Index Value"),
-        ),
-        SizedBox(
-          height: 10.0,
-        ),
-        Container(
-          padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
-          decoration: BoxDecoration(
-              color: checkLevel(),
-              borderRadius: BorderRadius.circular((20.0)),
-              boxShadow: [
-                BoxShadow(
-                    color: Colors.grey.withOpacity(0.5),
-                    offset: Offset(3.0, 3.0))
-              ]),
-          child: Column(
-            children: <Widget>[
-              Container(
-                padding: EdgeInsets.only(bottom: 10.0),
-                child: Text(
-                  widget.aqi.toString(),
-                  style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-                ),
-              ),
-              Container(
-                child: Text(level),
-              )
-            ],
+    return SafeArea(
+      child: Column(
+        children: <Widget>[
+          Center(
+            child: Text(
+              "Air Quality Index Value",
+              textDirection: TextDirection.ltr,
+            ),
           ),
-        ),
-      ],
+          SizedBox(
+            height: 10.0,
+          ),
+          Container(
+            padding: const EdgeInsets.fromLTRB(40.0, 20.0, 40.0, 20.0),
+            decoration: BoxDecoration(
+                color: checkLevel(),
+                borderRadius: BorderRadius.circular((20.0)),
+                boxShadow: [
+                  BoxShadow(
+                      color: Colors.grey.withOpacity(0.5),
+                      offset: Offset(3.0, 3.0))
+                ]),
+            child: Column(
+              children: <Widget>[
+                Container(
+                  padding: EdgeInsets.only(bottom: 10.0),
+                  child: Text(
+                    widget.aqi.toString(),
+                    style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  child: Text(level),
+                )
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
