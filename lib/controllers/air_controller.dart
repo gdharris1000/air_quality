@@ -6,7 +6,7 @@ import 'package:airquality1/models/location_model.dart';
 
 class AirController {
   Location location;
-  final String url = "https://api.waqi.info/feed/";
+  final String url = "https://api.waqi.info/";
 
   AirController(this.location);
 
@@ -20,13 +20,13 @@ class AirController {
   Future<Air> getDataFromApi(apiData) async {
     if (location.latitude != null && location.longitude != null) {
       final response = await get(
-          '${url}geo:${location.latitude};${location.longitude}/?token=${apiData['apikey']}');
+          '${url}feed/geo:${location.latitude};${location.longitude}/?token=${apiData['apikey']}');
       final data = json.decode(response.body);
       print(data);
       return Air.fromJson(json.decode(response.body));
     } else if (location.city != null) {
-      final response =
-          await get('${url}feed/${location.city}/?token=${apiData['apikey']}');
+      final response = await get(
+          '${url}search/?token=${apiData['apikey']}&keyword=${location.city}');
       final data = json.decode(response.body);
       print(data);
       return Air.fromJson(json.decode(response.body));

@@ -14,13 +14,13 @@ Built using Dart and Flutter.
 * Displays the AQI level
 * Displays the nearest monitoring station to the user
 * User can refresh to update the data
+* Display PM2.5 level
+* Display PM10 level
+* Display O3 level
 
 ## Future Features
 
 * A user can search for a location to get the air quality data
-* Display PM2.5 level
-* Display PM10 level
-* Display O3 level
 * Display NO2 level
 * Display temperature
 * Display humidity
