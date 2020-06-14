@@ -4,14 +4,17 @@ import 'package:airquality1/widgets/search_box.dart';
 
 void main() {
   testWidgets('Search Box', (WidgetTester tester) async {
+    CitySearch citySearch = CitySearch();
     await tester.pumpWidget(
       MaterialApp(
         home: Material(
-          child: CitySearch(),
+          child: citySearch,
         ),
       ),
     );
+    await tester.enterText(find.byType(TextField), 'London');
 
+    expect(citySearch.searchText, equals('London'));
     expect(find.text('Submit'), findsOneWidget);
   });
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CitySearch extends StatefulWidget {
+  String searchText = "";
   @override
   _CitySearchState createState() => _CitySearchState();
 }
@@ -11,9 +12,14 @@ class _CitySearchState extends State<CitySearch> {
     return Container(
       child: Column(
         children: <Widget>[
-          TextField(),
+          TextField(
+            onChanged: (value) {
+              widget.searchText = value;
+            },
+          ),
           RaisedButton(
             child: Text('Submit'),
+            onPressed: () {},
           )
         ],
       ),
