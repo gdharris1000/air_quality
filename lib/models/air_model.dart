@@ -1,4 +1,6 @@
-class Air {
+import 'package:flutter/foundation.dart';
+
+class Air extends ChangeNotifier {
   int aqi;
   int pm25;
   double o3;
@@ -29,5 +31,7 @@ class Air {
     parsedJson['data']['iaqi']['o3']['v'] != null
         ? o3 = parsedJson['data']['iaqi']['o3']['v']
         : o3 = null;
+
+    notifyListeners();
   }
 }
