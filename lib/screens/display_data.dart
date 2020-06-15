@@ -36,7 +36,7 @@ class _DataViewState extends State<DataView> {
                   borderRadius: BorderRadius.circular(20.0),
                 ),
                 padding: EdgeInsets.all(20.0),
-                child: Text('Nearest station:\n $widget.air.station'),
+                child: Text('Nearest station:\n ${widget.air.station}'),
               ),
               Padding(
                 padding: const EdgeInsets.all(50.0),

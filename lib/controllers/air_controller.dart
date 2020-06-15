@@ -32,7 +32,6 @@ class AirController {
           '${url}feed/geo:${cityData['data'][0]['station']['geo'][0]};${cityData['data'][0]['station']['geo'][1]}/?token=${apiData['apikey']}');
       final data = json.decode(response.body);
 
-      //print("city data: ${cityData['data'][0]['station']['geo']}");
       return Air.fromJson(data);
     }
   }
