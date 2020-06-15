@@ -17,10 +17,10 @@ Built using Dart and Flutter.
 * Display PM2.5 level
 * Display PM10 level
 * Display O3 level
+* A user can search for a location to get the air quality data
 
 ## Future Features
 
-* A user can search for a location to get the air quality data
 * Error handling
 * Display NO2 level
 * Display temperature
