@@ -4,7 +4,7 @@ import 'package:airquality1/models/location_model.dart';
 import 'package:airquality1/controllers/location_controller.dart';
 import 'package:airquality1/models/air_model.dart';
 import 'package:airquality1/controllers/air_controller.dart';
-import 'package:airquality1/screens/display_data.dart';
+import 'package:airquality1/screens/loading_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -25,9 +25,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 RaisedButton(
-                  onPressed: () async {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => DataView()));
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => LoadingScreen(
+                                  dataFromGeo: true,
+                                )));
                   },
                   child: Text('Use my location'),
                 ),

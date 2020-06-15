@@ -1,4 +1,6 @@
+import 'package:airquality1/screens/loading_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:airquality1/screens/display_data.dart';
 
 class CitySearch extends StatefulWidget {
   String searchText = "";
@@ -19,7 +21,15 @@ class _CitySearchState extends State<CitySearch> {
           ),
           RaisedButton(
             child: Text('Submit'),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => LoadingScreen(
+                            dataFromGeo: false,
+                            city: widget.searchText,
+                          )));
+            },
           )
         ],
       ),

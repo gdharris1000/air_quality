@@ -22,14 +22,14 @@ class AirController {
       final response = await get(
           '${url}feed/geo:${location.latitude};${location.longitude}/?token=${apiData['apikey']}');
       final data = json.decode(response.body);
-      print(data);
-      return Air.fromJson(json.decode(response.body));
+      print("geo data: $data");
+      return Air.fromJson(data);
     } else if (location.city != null) {
       final response = await get(
           '${url}search/?token=${apiData['apikey']}&keyword=${location.city}');
       final data = json.decode(response.body);
-      print(data);
-      return Air.fromJson(json.decode(response.body));
+      print("city data: ${data}");
+      return Air.fromJson(data);
     }
   }
 }
