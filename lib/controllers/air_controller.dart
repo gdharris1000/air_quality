@@ -25,10 +25,14 @@ class AirController {
       print("geo data: $data");
       return Air.fromJson(data);
     } else if (location.city != null) {
-      final response = await get(
+      final cityResponse = await get(
           '${url}search/?token=${apiData['apikey']}&keyword=${location.city}');
+      final cityData = json.decode(cityResponse.body);
+      final response = await get(
+          '${url}feed/geo:${cityData['data'][0]['station']['geo'][0]};${cityData['data'][0]['station']['geo'][1]}/?token=${apiData['apikey']}');
       final data = json.decode(response.body);
-      print("city data: ${data}");
+
+      //print("city data: ${cityData['data'][0]['station']['geo']}");
       return Air.fromJson(data);
     }
   }

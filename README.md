@@ -21,6 +21,7 @@ Built using Dart and Flutter.
 ## Future Features
 
 * A user can search for a location to get the air quality data
+* Error handling
 * Display NO2 level
 * Display temperature
 * Display humidity
