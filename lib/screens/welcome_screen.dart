@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:airquality1/widgets/search_box.dart';
+import 'package:airquality1/models/location_model.dart';
+import 'package:airquality1/controllers/location_controller.dart';
+import 'package:airquality1/models/air_model.dart';
+import 'package:airquality1/controllers/air_controller.dart';
+import 'package:airquality1/screens/display_data.dart';
 
 class WelcomeScreen extends StatefulWidget {
   @override
@@ -6,16 +12,30 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  LocationController locationController = LocationController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: <Widget>[
-          RaisedButton(
-            onPressed: () {},
-            child: Text('Use my location'),
-          )
-        ],
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                RaisedButton(
+                  onPressed: () async {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => DataView()));
+                  },
+                  child: Text('Use my location'),
+                ),
+                CitySearch(),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }

@@ -1,8 +1,10 @@
 import 'package:airquality1/models/air_model.dart';
+import 'package:airquality1/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'screens/display_data.dart';
 import 'package:provider/provider.dart';
+import 'screens/welcome_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       create: (context) => Air(0, "loading"),
       child: MaterialApp(
         title: 'Air Quality Checker',
-        home: DataView(),
+        home: WelcomeScreen(),
       ),
     );
   }
