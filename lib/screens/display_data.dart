@@ -61,7 +61,7 @@ class _DataViewState extends State<DataView> {
                   LoadingScreen(dataFromGeo: true);
                 },
                 child: Text(
-                  "Refresh",
+                  "Refresh using my location",
                   style: TextStyle(color: Colors.white),
                 ),
               ),
