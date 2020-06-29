@@ -1,4 +1,5 @@
 import 'package:airquality1/screens/loading_screen.dart';
+import 'package:airquality1/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:airquality1/models/air_model.dart';
 import 'package:airquality1/widgets/aqi_widget.dart';
@@ -27,11 +28,20 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Center(
-                    child: Text(widget.air.aqi.toString()),
+                    child: Text('Air Quality Index'),
+                  ),
+                  Center(
+                    child: Text(
+                      widget.air.aqi.toString(),
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 60.0),
+                    ),
                   ),
                   Center(
                     child: Text(
                       textLevel(widget.air.aqi),
+                      style: TextStyle(
+                          fontSize: 25.0, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
@@ -79,6 +89,19 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
                   },
                   child: Text(
                     "Refresh using my location",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+                RaisedButton(
+                  color: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WelcomeScreen()));
+                  },
+                  child: Text(
+                    "Search for a new location",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
