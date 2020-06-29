@@ -42,13 +42,8 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
             padding: const EdgeInsets.only(left: 40.0, right: 40.0),
             child: Column(
               children: <Widget>[
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('Nearest station:'),
-                    Text(widget.air.station),
-                  ],
-                ),
+                Text('Nearest station:'),
+                Text(widget.air.station),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
