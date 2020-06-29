@@ -2,6 +2,7 @@ import 'package:airquality1/screens/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:airquality1/models/air_model.dart';
 import 'package:airquality1/widgets/aqi_widget.dart';
+import 'package:airquality1/mixins/aqi_level_mixin.dart';
 
 class DataView extends StatefulWidget {
   final Air air;
@@ -12,56 +13,131 @@ class DataView extends StatefulWidget {
   _DataViewState createState() => _DataViewState();
 }
 
-class _DataViewState extends State<DataView> {
+class _DataViewState extends State<DataView> with AqiLevelMixin {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(
-          image: DecorationImage(
-              image: AssetImage("assets/images/sky.jpg"), fit: BoxFit.cover),
-        ),
-        child: SafeArea(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                constraints: BoxConstraints(maxWidth: 300),
-                decoration: BoxDecoration(
-                  color: Colors.white.withOpacity(0.5),
-                  borderRadius: BorderRadius.circular(20.0),
-                ),
-                padding: EdgeInsets.all(20.0),
-                child: Text('Nearest station:\n ${widget.air.station}'),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(50.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white.withOpacity(0.5),
-                    borderRadius: BorderRadius.circular(20.0),
+      body: Column(
+        children: <Widget>[
+          Container(
+            color: colourLevel(widget.air.aqi),
+            child: SafeArea(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  Center(
+                    child: Text(widget.air.aqi.toString()),
                   ),
-                  padding: EdgeInsets.all(20.0),
-                  child: AQI(widget.air.aqi),
-                ),
+                  Center(
+                    child: Text(
+                      textLevel(widget.air.aqi),
+                    ),
+                  ),
+                ],
               ),
-              Text(
-                  "PM2.5: ${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}"),
-              Text(
-                  "PM10: ${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}"),
-              Text(
-                  "O3: ${widget.air.o3 != null ? widget.air.o3 : 'no data available'}"),
-              RaisedButton(
-                color: Colors.blueAccent,
-                onPressed: () {
-                  LoadingScreen(dataFromGeo: true);
-                },
-                child: Text(
-                  "Refresh using my location",
-                  style: TextStyle(color: Colors.white),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
+            child: Column(
+              children: <Widget>[
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('Nearest station:'),
+                    Text(widget.air.station),
+                  ],
                 ),
-              ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('PM2.5'),
+                    Text(
+                        "${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}")
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('PM10'),
+                    Text(
+                        "${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}")
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    Text('O3'),
+                    Text(
+                        "${widget.air.o3 != null ? widget.air.o3 : 'no data available'}")
+                  ],
+                ),
+                RaisedButton(
+                  color: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                LoadingScreen(dataFromGeo: true)));
+                  },
+                  child: Text(
+                    "Refresh using my location",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
+              ],
+            ),
+          )
+        ],
+      ),
+//      body: Container(
+//        decoration: BoxDecoration(
+//          image: DecorationImage(
+//              image: AssetImage("assets/images/sky.jpg"), fit: BoxFit.cover),
+//        ),
+//        child: SafeArea(
+//          child: Column(
+//            crossAxisAlignment: CrossAxisAlignment.center,
+//            mainAxisAlignment: MainAxisAlignment.center,
+//            children: <Widget>[
+//              Container(
+//                constraints: BoxConstraints(maxWidth: 300),
+//                decoration: BoxDecoration(
+//                  color: Colors.white.withOpacity(0.5),
+//                  borderRadius: BorderRadius.circular(20.0),
+//                ),
+//                padding: EdgeInsets.all(20.0),
+//                child: Text('Nearest station:\n ${widget.air.station}'),
+//              ),
+//              Padding(
+//                padding: const EdgeInsets.all(50.0),
+//                child: Container(
+//                  decoration: BoxDecoration(
+//                    color: Colors.white.withOpacity(0.5),
+//                    borderRadius: BorderRadius.circular(20.0),
+//                  ),
+//                  padding: EdgeInsets.all(20.0),
+//                  child: AQI(widget.air.aqi),
+//                ),
+//              ),
+//              Text(
+//                  "PM2.5: ${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}"),
+//              Text(
+//                  "PM10: ${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}"),
+//              Text(
+//                  "O3: ${widget.air.o3 != null ? widget.air.o3 : 'no data available'}"),
+//              RaisedButton(
+//                color: Colors.blueAccent,
+//                onPressed: () {
+//                  LoadingScreen(dataFromGeo: true);
+//                },
+//                child: Text(
+//                  "Refresh using my location",
+//                  style: TextStyle(color: Colors.white),
+//                ),
+//              ),
 //              Container(
 //                padding: EdgeInsets.all(20.0),
 //                decoration: BoxDecoration(
@@ -78,10 +154,10 @@ class _DataViewState extends State<DataView> {
 //                ),
 //                child: Text('PM10: $pm10'),
 //              ),
-            ],
-          ),
-        ),
-      ),
+//            ],
+//          ),
+//        ),
+//      ),
     );
   }
 }

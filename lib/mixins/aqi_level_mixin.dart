@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class AqiColourMixin {
+class AqiLevelMixin {
   Color colourLevel(aqi) {
     if (aqi <= 50) {
       return Colors.green;
