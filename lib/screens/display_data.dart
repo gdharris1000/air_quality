@@ -1,9 +1,6 @@
 import 'package:airquality1/screens/loading_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:airquality1/models/air_model.dart';
-import 'package:airquality1/controllers/location_controller.dart';
-import 'package:airquality1/controllers/air_controller.dart';
-import 'package:airquality1/models/location_model.dart';
 import 'package:airquality1/widgets/aqi_widget.dart';
 
 class DataView extends StatefulWidget {
