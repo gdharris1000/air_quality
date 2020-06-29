@@ -48,13 +48,13 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 40.0, right: 40.0),
-            child: Column(
-              children: <Widget>[
-                Text('Nearest station:'),
-                Text(widget.air.station),
-                Row(
+          Column(
+            children: <Widget>[
+              Text('Nearest station:'),
+              Text(widget.air.station),
+              Padding(
+                padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text('PM2.5'),
@@ -62,7 +62,10 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
                         "${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}")
                   ],
                 ),
-                Row(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text('PM10'),
@@ -70,7 +73,10 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
                         "${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}")
                   ],
                 ),
-                Row(
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
                     Text('O3'),
@@ -78,35 +84,33 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
                         "${widget.air.o3 != null ? widget.air.o3 : 'no data available'}")
                   ],
                 ),
-                RaisedButton(
-                  color: Colors.blueAccent,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                LoadingScreen(dataFromGeo: true)));
-                  },
-                  child: Text(
-                    "Refresh using my location",
-                    style: TextStyle(color: Colors.white),
-                  ),
+              ),
+              RaisedButton(
+                color: Colors.blueAccent,
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              LoadingScreen(dataFromGeo: true)));
+                },
+                child: Text(
+                  "Refresh using my location",
+                  style: TextStyle(color: Colors.white),
                 ),
-                RaisedButton(
-                  color: Colors.blueAccent,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => WelcomeScreen()));
-                  },
-                  child: Text(
-                    "Search for a new location",
-                    style: TextStyle(color: Colors.white),
-                  ),
+              ),
+              RaisedButton(
+                color: Colors.blueAccent,
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => WelcomeScreen()));
+                },
+                child: Text(
+                  "Search for a new location",
+                  style: TextStyle(color: Colors.white),
                 ),
-              ],
-            ),
+              ),
+            ],
           )
         ],
       ),
