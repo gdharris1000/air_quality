@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:airquality1/models/air_model.dart';
 import 'package:airquality1/widgets/data_item.dart';
 import 'package:airquality1/mixins/aqi_level_mixin.dart';
+import 'package:airquality1/widgets/aqi_widget.dart';
 
 class DataView extends StatefulWidget {
   final Air air;
@@ -25,31 +26,9 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
             child: SafeArea(
               child: Flexible(
                 flex: 10,
-                child: Padding(
-                  padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Center(
-                        child: Text('Air Quality Index'),
-                      ),
-                      Center(
-                        child: Text(
-                          widget.air.aqi.toString(),
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 60.0),
-                        ),
-                      ),
-                      Center(
-                        child: Text(
-                          textLevel(widget.air.aqi),
-                          style: TextStyle(
-                              fontSize: 25.0, fontWeight: FontWeight.bold),
-                        ),
-                      ),
-                    ],
-                  ),
+                child: AQI(
+                  aqi: widget.air.aqi.toString(),
+                  level: textLevel(widget.air.aqi),
                 ),
               ),
             ),
