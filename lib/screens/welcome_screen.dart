@@ -37,7 +37,14 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                                     dataFromGeo: true,
                                   )));
                     },
-                    child: Text('Use my location'),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Icon(Icons.my_location),
+                        SizedBox(width: 10.0),
+                        Text('Use my location'),
+                      ],
+                    ),
                   ),
                   CitySearch(),
                 ],

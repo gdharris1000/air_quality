@@ -22,7 +22,14 @@ class _CitySearchState extends State<CitySearch> {
             },
           ),
           RaisedButton(
-            child: Text('Search for city'),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Icon(Icons.location_city),
+                SizedBox(width: 10.0),
+                Text('Search for city'),
+              ],
+            ),
             onPressed: () {
               Navigator.push(
                   context,
