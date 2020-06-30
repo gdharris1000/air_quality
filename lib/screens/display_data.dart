@@ -60,28 +60,8 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
               children: <Widget>[
                 Text('Nearest station:'),
                 Text(widget.air.station),
-                Padding(
-                  padding: const EdgeInsets.only(left: 60.0, right: 60.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('PM2.5'),
-                      Text(
-                          "${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}")
-                    ],
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 60.0, right: 60.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('PM10'),
-                      Text(
-                          "${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}")
-                    ],
-                  ),
-                ),
+                DataItem(label: "PM2.5", value: widget.air.pm25.toString()),
+                DataItem(label: "PM10", value: widget.air.pm10.toString()),
                 DataItem(label: "O3", value: widget.air.o3.toString()),
               ],
             ),
