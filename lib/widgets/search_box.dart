@@ -15,12 +15,14 @@ class _CitySearchState extends State<CitySearch> {
       child: Column(
         children: <Widget>[
           TextField(
+            decoration: InputDecoration(
+                fillColor: Color.fromRGBO(255, 255, 255, 0.3), filled: true),
             onChanged: (value) {
               widget.searchText = value;
             },
           ),
           RaisedButton(
-            child: Text('Submit'),
+            child: Text('Search for city'),
             onPressed: () {
               Navigator.push(
                   context,

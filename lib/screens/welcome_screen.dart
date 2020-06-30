@@ -17,26 +17,31 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.only(left: 25.0, right: 25.0),
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                RaisedButton(
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => LoadingScreen(
-                                  dataFromGeo: true,
-                                )));
-                  },
-                  child: Text('Use my location'),
-                ),
-                CitySearch(),
-              ],
+      body: Container(
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage("assets/images/sky.jpg"), fit: BoxFit.cover)),
+        child: SafeArea(
+          child: Padding(
+            padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  RaisedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => LoadingScreen(
+                                    dataFromGeo: true,
+                                  )));
+                    },
+                    child: Text('Use my location'),
+                  ),
+                  CitySearch(),
+                ],
+              ),
             ),
           ),
         ),
