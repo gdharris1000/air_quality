@@ -23,94 +23,112 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
           Container(
             color: colourLevel(widget.air.aqi),
             child: SafeArea(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                  Center(
-                    child: Text('Air Quality Index'),
+              child: Flexible(
+                flex: 6,
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Center(
+                        child: Text('Air Quality Index'),
+                      ),
+                      Center(
+                        child: Text(
+                          widget.air.aqi.toString(),
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 60.0),
+                        ),
+                      ),
+                      Center(
+                        child: Text(
+                          textLevel(widget.air.aqi),
+                          style: TextStyle(
+                              fontSize: 25.0, fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
                   ),
-                  Center(
-                    child: Text(
-                      widget.air.aqi.toString(),
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 60.0),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      textLevel(widget.air.aqi),
-                      style: TextStyle(
-                          fontSize: 25.0, fontWeight: FontWeight.bold),
-                    ),
-                  ),
-                ],
+                ),
               ),
             ),
           ),
-          Column(
-            children: <Widget>[
-              Text('Nearest station:'),
-              Text(widget.air.station),
-              Padding(
-                padding: const EdgeInsets.only(left: 60.0, right: 60.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('PM2.5'),
-                    Text(
-                        "${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}")
-                  ],
+          Flexible(
+            flex: 3,
+            child: Column(
+              children: <Widget>[
+                Text('Nearest station:'),
+                Text(widget.air.station),
+                Padding(
+                  padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('PM2.5'),
+                      Text(
+                          "${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}")
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 60.0, right: 60.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('PM10'),
-                    Text(
-                        "${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}")
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('PM10'),
+                      Text(
+                          "${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}")
+                    ],
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 60.0, right: 60.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: <Widget>[
-                    Text('O3'),
-                    Text(
-                        "${widget.air.o3 != null ? widget.air.o3 : 'no data available'}")
-                  ],
+                Padding(
+                  padding: const EdgeInsets.only(left: 60.0, right: 60.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text('O3'),
+                      Text(
+                          "${widget.air.o3 != null ? widget.air.o3 : 'no data available'}")
+                    ],
+                  ),
                 ),
-              ),
-              RaisedButton(
-                color: Colors.blueAccent,
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              LoadingScreen(dataFromGeo: true)));
-                },
-                child: Text(
-                  "Refresh using my location",
-                  style: TextStyle(color: Colors.white),
+              ],
+            ),
+          ),
+          Flexible(
+            flex: 1,
+            child: Column(
+              children: <Widget>[
+                RaisedButton(
+                  color: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                LoadingScreen(dataFromGeo: true)));
+                  },
+                  child: Text(
+                    "Refresh using my location",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-              ),
-              RaisedButton(
-                color: Colors.blueAccent,
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => WelcomeScreen()));
-                },
-                child: Text(
-                  "Search for a new location",
-                  style: TextStyle(color: Colors.white),
+                RaisedButton(
+                  color: Colors.blueAccent,
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => WelcomeScreen()));
+                  },
+                  child: Text(
+                    "Search for a new location",
+                    style: TextStyle(color: Colors.white),
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           )
         ],
       ),
