@@ -8,7 +8,10 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Material(
-            child: AQI(10),
+            child: AQI(
+              aqi: "10",
+              level: 'Good',
+            ),
           ),
         ),
       );
@@ -27,7 +30,10 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Material(
-            child: AQI(60),
+            child: AQI(
+              aqi: "60",
+              level: "Moderate",
+            ),
           ),
         ),
       );
@@ -46,7 +52,10 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Material(
-            child: AQI(110),
+            child: AQI(
+              aqi: "110",
+              level: 'Unhealthy for Sensitive Groups',
+            ),
           ),
         ),
       );
@@ -64,7 +73,10 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Material(
-            child: AQI(160),
+            child: AQI(
+              aqi: "160",
+              level: 'Unhealthy',
+            ),
           ),
         ),
       );
@@ -83,7 +95,10 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Material(
-            child: AQI(260),
+            child: AQI(
+              aqi: "260",
+              level: 'Very Unhealthy',
+            ),
           ),
         ),
       );
@@ -101,7 +116,7 @@ void main() {
       await tester.pumpWidget(
         MaterialApp(
           home: Material(
-            child: AQI(360),
+            child: AQI(aqi: "360", level: 'Hazardous'),
           ),
         ),
       );

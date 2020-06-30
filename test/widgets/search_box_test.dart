@@ -15,6 +15,6 @@ void main() {
     await tester.enterText(find.byType(TextField), 'London');
 
     expect(citySearch.searchText, equals('London'));
-    expect(find.text('Submit'), findsOneWidget);
+    expect(find.text('Search for city'), findsOneWidget);
   });
 }

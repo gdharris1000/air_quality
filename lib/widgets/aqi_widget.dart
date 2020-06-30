@@ -15,7 +15,7 @@ class AQI extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Center(
-            child: Text('Air Quality Index'),
+            child: Text('Air Quality Index Value'),
           ),
           Center(
             child: Text(
