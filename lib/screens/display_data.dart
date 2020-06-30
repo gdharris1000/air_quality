@@ -2,7 +2,7 @@ import 'package:airquality1/screens/loading_screen.dart';
 import 'package:airquality1/screens/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:airquality1/models/air_model.dart';
-import 'package:airquality1/widgets/aqi_widget.dart';
+import 'package:airquality1/widgets/data_item.dart';
 import 'package:airquality1/mixins/aqi_level_mixin.dart';
 
 class DataView extends StatefulWidget {
@@ -82,17 +82,7 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
                     ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 60.0, right: 60.0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text('O3'),
-                      Text(
-                          "${widget.air.o3 != null ? widget.air.o3 : 'no data available'}")
-                    ],
-                  ),
-                ),
+                DataItem(label: "O3", value: widget.air.o3.toString()),
               ],
             ),
           ),
