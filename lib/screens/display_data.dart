@@ -21,11 +21,11 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
     return Scaffold(
       body: Column(
         children: <Widget>[
-          Container(
-            color: colourLevel(widget.air.aqi),
-            child: SafeArea(
-              child: Flexible(
-                flex: 10,
+          Flexible(
+            flex: 3,
+            child: Container(
+              color: colourLevel(widget.air.aqi),
+              child: SafeArea(
                 child: AQI(
                   aqi: widget.air.aqi.toString(),
                   level: textLevel(widget.air.aqi),
@@ -34,15 +34,18 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
             ),
           ),
           Flexible(
-            flex: 3,
-            child: Column(
-              children: <Widget>[
-                Text('Nearest station:'),
-                Text(widget.air.station),
-                DataItem(label: "PM2.5", value: widget.air.pm25.toString()),
-                DataItem(label: "PM10", value: widget.air.pm10.toString()),
-                DataItem(label: "O3", value: widget.air.o3.toString()),
-              ],
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Column(
+                children: <Widget>[
+                  Text('Nearest station:'),
+                  Text(widget.air.station),
+                  DataItem(label: "PM2.5", value: widget.air.pm25.toString()),
+                  DataItem(label: "PM10", value: widget.air.pm10.toString()),
+                  DataItem(label: "O3", value: widget.air.o3.toString()),
+                ],
+              ),
             ),
           ),
           Flexible(

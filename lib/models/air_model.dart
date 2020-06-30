@@ -16,7 +16,7 @@ class Air {
   Air.fromJson(Map<String, dynamic> parsedJson) {
     aqi = parsedJson['data']['aqi'];
 
-    station = parsedJson['data']['city']['name'];
+    station = parsedJson['data']['city']['name'].toString();
 
     parsedJson['data']['iaqi']['pm25']['v'] != null
         ? pm25 = parsedJson['data']['iaqi']['pm25']['v']
