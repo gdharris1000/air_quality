@@ -24,7 +24,7 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
             color: colourLevel(widget.air.aqi),
             child: SafeArea(
               child: Flexible(
-                flex: 6,
+                flex: 10,
                 child: Padding(
                   padding: const EdgeInsets.only(top: 40.0, bottom: 40.0),
                   child: Column(
@@ -102,72 +102,6 @@ class _DataViewState extends State<DataView> with AqiLevelMixin {
           )
         ],
       ),
-//      body: Container(
-//        decoration: BoxDecoration(
-//          image: DecorationImage(
-//              image: AssetImage("assets/images/sky.jpg"), fit: BoxFit.cover),
-//        ),
-//        child: SafeArea(
-//          child: Column(
-//            crossAxisAlignment: CrossAxisAlignment.center,
-//            mainAxisAlignment: MainAxisAlignment.center,
-//            children: <Widget>[
-//              Container(
-//                constraints: BoxConstraints(maxWidth: 300),
-//                decoration: BoxDecoration(
-//                  color: Colors.white.withOpacity(0.5),
-//                  borderRadius: BorderRadius.circular(20.0),
-//                ),
-//                padding: EdgeInsets.all(20.0),
-//                child: Text('Nearest station:\n ${widget.air.station}'),
-//              ),
-//              Padding(
-//                padding: const EdgeInsets.all(50.0),
-//                child: Container(
-//                  decoration: BoxDecoration(
-//                    color: Colors.white.withOpacity(0.5),
-//                    borderRadius: BorderRadius.circular(20.0),
-//                  ),
-//                  padding: EdgeInsets.all(20.0),
-//                  child: AQI(widget.air.aqi),
-//                ),
-//              ),
-//              Text(
-//                  "PM2.5: ${widget.air.pm25 != null ? widget.air.pm25 : 'no data available'}"),
-//              Text(
-//                  "PM10: ${widget.air.pm10 != null ? widget.air.pm10 : 'no data available'}"),
-//              Text(
-//                  "O3: ${widget.air.o3 != null ? widget.air.o3 : 'no data available'}"),
-//              RaisedButton(
-//                color: Colors.blueAccent,
-//                onPressed: () {
-//                  LoadingScreen(dataFromGeo: true);
-//                },
-//                child: Text(
-//                  "Refresh using my location",
-//                  style: TextStyle(color: Colors.white),
-//                ),
-//              ),
-//              Container(
-//                padding: EdgeInsets.all(20.0),
-//                decoration: BoxDecoration(
-//                  color: Colors.white.withOpacity(0.5),
-//                  borderRadius: BorderRadius.circular(20.0),
-//                ),
-//                child: Text('PM25: $pm25'),
-//              ),
-//              Container(
-//                padding: EdgeInsets.all(20.0),
-//                decoration: BoxDecoration(
-//                  color: Colors.white.withOpacity(0.5),
-//                  borderRadius: BorderRadius.circular(20.0),
-//                ),
-//                child: Text('PM10: $pm10'),
-//              ),
-//            ],
-//          ),
-//        ),
-//      ),
     );
   }
 }
