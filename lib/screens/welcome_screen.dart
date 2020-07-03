@@ -28,6 +28,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
+                  Image(image: AssetImage("assets/images/logo.png")),
                   RaisedButton(
                     onPressed: () {
                       Navigator.push(
