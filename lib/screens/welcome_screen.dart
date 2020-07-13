@@ -29,6 +29,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
                   Image(image: AssetImage("assets/images/logo.png")),
+                  SizedBox(height: 30.0),
                   RaisedButton(
                     onPressed: () {
                       Navigator.push(
@@ -47,6 +48,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       ],
                     ),
                   ),
+                  SizedBox(height: 30.0),
                   CitySearch(),
                 ],
               ),
